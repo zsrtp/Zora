@@ -154,6 +154,8 @@ private:
   void ShowResourcePackManager();
   void ShowCheatsManager();
 
+  void ShowAreaLoader();
+
   void NetPlayInit();
   bool NetPlayJoin();
   bool NetPlayHost(const QString& game_id);

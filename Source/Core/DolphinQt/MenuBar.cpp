@@ -46,6 +46,7 @@
 #include "DiscIO/NANDImporter.h"
 #include "DiscIO/WiiSaveBanner.h"
 
+#include "DolphinQt/Zelda/AreaLoader.h"
 #include "DolphinQt/AboutDialog.h"
 #include "DolphinQt/Host.h"
 #include "DolphinQt/QtUtils/ModalMessageBox.h"
@@ -74,6 +75,7 @@ MenuBar::MenuBar(QWidget* parent) : QMenuBar(parent)
   AddOptionsMenu();
   AddToolsMenu();
   AddViewMenu();
+  AddZeldaMenu();
   AddJITMenu();
   AddSymbolsMenu();
   AddHelpMenu();
@@ -323,6 +325,12 @@ void MenuBar::AddEmulationMenu()
 
   for (QMenu* menu : {m_state_load_menu, m_state_save_menu, m_state_slot_menu})
     connect(menu, &QMenu::aboutToShow, this, &MenuBar::UpdateStateSlotMenu);
+}
+
+void MenuBar::AddZeldaMenu()
+{
+  QMenu* zelda_menu = addMenu(tr("Zelda"));
+  zelda_menu->addAction(tr("Area Loader"), this, &MenuBar::ShowAreaLoader);
 }
 
 void MenuBar::AddStateLoadMenu(QMenu* emu_menu)

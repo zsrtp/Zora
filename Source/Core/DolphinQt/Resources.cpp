@@ -26,6 +26,8 @@ QIcon Resources::GetIcon(const QString& name, const QString& dir)
 {
   QString base_path = dir + QLatin1Char{'/'} + name;
 
+  std::string s = base_path.toLocal8Bit().constData();
+
   const auto dpr = QGuiApplication::primaryScreen()->devicePixelRatio();
 
   QIcon icon(base_path.append(QStringLiteral(".png")));

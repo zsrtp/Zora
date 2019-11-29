@@ -10,6 +10,8 @@ message(STATUS "Found Qt version ${Qt5Core_VERSION}")
 set(CMAKE_AUTOMOC ON)
 
 add_executable(dolphin-emu
+  Zelda/AreaLoader.cpp
+	Zelda/AreaLoader.h
   AboutDialog.cpp
   AboutDialog.h
   CheatsManager.cpp

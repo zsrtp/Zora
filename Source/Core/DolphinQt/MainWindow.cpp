@@ -59,6 +59,7 @@
 
 #include "DiscIO/NANDImporter.h"
 
+#include "DolphinQt/Zelda/AreaLoader.h"
 #include "DolphinQt/AboutDialog.h"
 #include "DolphinQt/CheatsManager.h"
 #include "DolphinQt/Config/ControllersWindow.h"
@@ -504,6 +505,9 @@ void MainWindow::ConnectMenuBar()
     m_code_widget->UpdateSymbols();
     m_code_widget->Update();
   });
+
+  // Zelda
+  connect(m_menu_bar, &MenuBar::ShowAreaLoader, this, &MainWindow::ShowAreaLoader);
 }
 
 void MainWindow::ConnectHotkeys()
@@ -1107,6 +1111,12 @@ void MainWindow::ShowAboutDialog()
 {
   AboutDialog about{this};
   about.exec();
+}
+
+void MainWindow::ShowAreaLoader()
+{
+  Zelda::AreaLoader loader{this};
+  loader.exec();
 }
 
 void MainWindow::ShowHotkeyDialog()

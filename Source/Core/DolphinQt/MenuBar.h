@@ -115,6 +115,9 @@ signals:
   // Synbols
   void NotifySymbolsUpdated();
 
+  // Zelda
+  void ShowAreaLoader();
+
 private:
   void OnEmulationStateChanged(Core::State state);
 
@@ -125,6 +128,8 @@ private:
   void AddStateLoadMenu(QMenu* emu_menu);
   void AddStateSaveMenu(QMenu* emu_menu);
   void AddStateSlotMenu(QMenu* emu_menu);
+
+  void AddZeldaMenu();
 
   void AddViewMenu();
   void AddGameListTypeSection(QMenu* view_menu);
@@ -199,7 +204,7 @@ private:
   QAction* m_check_nand;
   QAction* m_extract_certificates;
   std::array<QAction*, 5> m_wii_remotes;
-
+  
   // Emulation
   QAction* m_play_action;
   QAction* m_pause_action;

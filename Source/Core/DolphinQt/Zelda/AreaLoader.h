@@ -47,29 +47,33 @@ namespace Zelda
     void ConnectWidgets();
     void OnStateChanged(Core::State state);
     void OnTriggerLoad();
+
     void OnGroupIndexChange(int index);
+    void OnStageIndexChange(int index);
+    void OnRoomIndexChange(int index);
+    void OnSpawnIndexChange(int index);
+    void OnStateIndexChange(int index);
 
+    QLayout* m_layout = nullptr;
 
-    QLayout* m_layout;
+    QLabel* m_logo = nullptr;
 
-    QLabel* m_logo;
+    QLabel* m_group_label = nullptr;
+    QComboBox* m_group_select = nullptr;
 
-    QLabel* m_group_label;
-    QComboBox* m_group_select;
+    QLabel* m_stage_label = nullptr;
+    QComboBox* m_stage_select = nullptr;
 
-    QLabel* m_stage_label;
-    QComboBox* m_stage_select;
+    QLabel* m_room_label = nullptr;
+    QComboBox* m_room_select = nullptr;
 
-    QLabel* m_room_label;
-    QComboBox* m_room_select;
+    QLabel* m_spawn_label = nullptr;
+    QComboBox* m_spawn_select = nullptr;
 
-    QLabel* m_spawn_label;
-    QComboBox* m_spawn_select;
+    QLabel* m_state_label = nullptr;
+    QComboBox* m_state_select = nullptr;
 
-    QLabel* m_state_label;
-    QComboBox* m_state_select;
-
-    QPushButton* m_trigger_load;
+    QPushButton* m_trigger_load = nullptr;
 
   };
 }  // namespace Zelda
